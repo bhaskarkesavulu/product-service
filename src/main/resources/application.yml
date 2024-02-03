@@ -1,0 +1,12 @@
+server:
+  port: 2024
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/bhaskar
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
