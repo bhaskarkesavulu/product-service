@@ -36,7 +36,7 @@ public class ProductController {
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
     public Optional<Product> getProduct(@PathVariable("id")Long id)
     {
-        log.info("Finding Product by ID :" + id);
+        log.info("Finding Product by ID is :" + id);
         return productService.getProductById(id);
     }
 
