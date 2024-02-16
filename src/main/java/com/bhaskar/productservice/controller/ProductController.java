@@ -48,6 +48,7 @@ public class ProductController {
     @DeleteMapping(value = "/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteById( @PathVariable("id") Long id){
+        System.out.println("Id is"+id);
         productService.deleteById(id);
 
     }
