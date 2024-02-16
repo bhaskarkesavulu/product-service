@@ -5,6 +5,7 @@ import com.bhaskar.productservice.model.Product;
 import com.bhaskar.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +27,12 @@ public class ProductController {
 
     }
 
+    @Cacheable(value = "products")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Product> getAllProducts(){
 
+        System.out.println("Calling DB to get Data");
         return productService.getAllProducts();
     }
 
